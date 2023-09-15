@@ -1,0 +1,114 @@
+* {
+  outline: 0;
+}
+
+::selection {
+  color: #111010;
+  background: #11e6dfad;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #263a60;
+  color: #f8f5f5;
+}
+
+.wrapper {
+  margin: 1rem;
+}
+
+.btn {
+  font-size: 0.8rem;
+  background: #000000;
+  color: #FFF;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.btn:hover {
+  background: #a1a2a5;
+  box-shadow: 0 0 10px 0 rgba(6, 138, 65, 0.793);
+}
+
+.label {
+  background: #FFF;
+  color: #000;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  color: #8f8e8e;
+}
+
+#url {
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  color: #000000;
+  background: #f3f720;
+}
+
+[type=radio] {
+  display: none;
+}
+
+[type=radio] + label {
+  display: inline-block;
+  background: #101011;
+  border-radius: 3rem;
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0.32rem 1.1rem;
+  min-width: 4rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+[type=radio] + label:hover {
+  background: #817f7f;
+  box-shadow: 0 0 10px 0 rgb(3, 235, 30);
+}
+
+[type=radio]:checked + label {
+  background: #afb1ae;
+  box-shadow: 0 0 10px 0 rgb(26, 174, 12);
+}
+
+[type=checkbox] {
+  appearance: none;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #022d58;
+  background: #FFF;
+  float: left;
+  cursor: pointer;
+}
+[type=checkbox]:checked {
+  background: #f8f9fa;
+  border: 3px solid #04f720;
+}
+
+#html, #css {
+  overflow-y: scroll;
+  background: #626369;
+  border-radius: 5px;
+  color: #FFF;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  height: 9rem;
+  overflow: auto;
+  padding: 1rem;
+}
+
+#preview {
+  border: 1px solid #000;
+}

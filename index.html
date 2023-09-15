@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Jedi iframe Judo</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css'><link rel="stylesheet" href="./style.css">
+<center><img href="1.pmg" src="1.png" hieght="400px width="600px"></center>
+</head>
+<body>
+<div class="wrapper grid-x grid-margin-x grid-margin-y">
+	<div class="widget cell medium-6">
+		<span class="label">URL OR WEB ADDRESS GOES HERE</span>
+    	<input id="url" type="url" placeholder="PRESS ENTER TO GENERATE FRESH CODE" "https://462ae639.fishy.pages.dev/" value="https://462ae639.fishy.pages.dev"/>
+		<input id="ytbAttr" type="checkbox" value="1">
+		<label for="ytbAttr">ADD FULLSCREEN AND AUTOPLAY</label>
+	
+	
+	</div>
+	<div id="options" class="widget widget-radio cell medium-6">
+		<span class="label">iFRAME SIZE</span><br>
+		<input type="radio" checked="checked" name="aspect" value="16x9" id="asp1" /><label for="asp1">16x9</label>
+		<input type="radio" name="aspect" value="8x5" id="asp2" /><label for="asp2">8x5</label>
+		<input type="radio" name="aspect" value="5x4" id="asp3" /><label for="asp3">5x4</label>
+		<input type="radio" name="aspect" value="5x4" id="asp4" /><label for="asp4">5x3</label>
+		<input type="radio" name="aspect" value="4x3"  id="asp5" /><label for="asp5">4x3</label>
+		<input type="radio" name="aspect" value="4x5"  id="asp6" /><label for="asp6">4x5</label>
+		<input type="radio" name="aspect" value="3x2"  id="asp7" /><label for="asp7">3x2</label>
+		<input type="radio" name="aspect" value="3x1"  id="asp8" /><label for="asp8">3x1</label>
+		<input type="radio" name="aspect" value="2x1"  id="asp9" /><label for="asp9">2x1</label>
+		<input type="radio" name="aspect" value="1x1"  id="asp0" /><label for="asp0">1x1</label>
+    </div>
+	<div  class="cell medium-6">
+		<span class="label">HTML</span>
+		<div id="html"></div>
+		<button class="btn" data-clipboard-target="#html">COPY HTML</button>
+	</div>
+	<div class="cell medium-6">
+		<span class="label">CSS</span>
+		<div id="css">
+		<p>.iframe-container {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;padding-top: <span id="proportions"></span>%;<br>
+		}<br>
+		.iframe-container iframe {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;border: 0;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+		}
+		</div>
+		<button class="btn" data-clipboard-target="#css">COPY CSS</button><br>
+	</div>
+	<div id="preview" class="cell"></div>
+</div>
+<style id="style"></style>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
