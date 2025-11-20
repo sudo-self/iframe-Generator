@@ -1,63 +1,164 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jedi iframe Judo</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css'><link rel="stylesheet" href="./style.css">
-<center><img href="1.pmg" src="1.png" hieght="400px width="600px"></center>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iFrame Generator Pro | Responsive Embed Tool</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<div class="wrapper grid-x grid-margin-x grid-margin-y">
-	<div class="widget cell medium-6">
-		<span class="label">URL OR WEB ADDRESS GOES HERE</span>
-    	<input id="url" type="url" placeholder="PRESS ENTER TO GENERATE FRESH CODE" "https://nemo.jessejesse.com" value="https://nemo.jessejesse.com"/>
-		<input id="ytbAttr" type="checkbox" value="1">
-		<label for="ytbAttr">ADD FULLSCREEN AND AUTOPLAY</label>
-	
-	
-	</div>
-	<div id="options" class="widget widget-radio cell medium-6">
-		<span class="label">iFRAME SIZE</span><br>
-		<input type="radio" checked="checked" name="aspect" value="16x9" id="asp1" /><label for="asp1">16x9</label>
-		<input type="radio" name="aspect" value="8x5" id="asp2" /><label for="asp2">8x5</label>
-		<input type="radio" name="aspect" value="5x4" id="asp3" /><label for="asp3">5x4</label>
-		<input type="radio" name="aspect" value="5x4" id="asp4" /><label for="asp4">5x3</label>
-		<input type="radio" name="aspect" value="4x3"  id="asp5" /><label for="asp5">4x3</label>
-		<input type="radio" name="aspect" value="4x5"  id="asp6" /><label for="asp6">4x5</label>
-		<input type="radio" name="aspect" value="3x2"  id="asp7" /><label for="asp7">3x2</label>
-		<input type="radio" name="aspect" value="3x1"  id="asp8" /><label for="asp8">3x1</label>
-		<input type="radio" name="aspect" value="2x1"  id="asp9" /><label for="asp9">2x1</label>
-		<input type="radio" name="aspect" value="1x1"  id="asp0" /><label for="asp0">1x1</label>
+  <header class="app-header">
+    <div class="grid-container">
+      <div class="grid-x align-middle">
+        <div class="cell medium-8">
+          <h1 class="app-title">iFrame Generator Pro</h1>
+          <p class="app-subtitle">Create responsive embedded content with ease</p>
+        </div>
+        <div class="cell medium-4 text-right">
+          <img src="1.png" alt="iFrame Generator" class="app-logo">
+        </div>
+      </div>
     </div>
-	<div  class="cell medium-6">
-		<span class="label">HTML</span>
-		<div id="html"></div>
-		<button class="btn" data-clipboard-target="#html">COPY HTML</button>
-	</div>
-	<div class="cell medium-6">
-		<span class="label">CSS</span>
-		<div id="css">
-		<p>.iframe-container {<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;padding-top: <span id="proportions"></span>%;<br>
-		}<br>
-		.iframe-container iframe {<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;border: 0;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
-		}
-		</div>
-		<button class="btn" data-clipboard-target="#css">COPY CSS</button><br>
-	</div>
-	<div id="preview" class="cell"></div>
-</div>
-<style id="style"></style>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js'></script><script  src="./script.js"></script>
+  </header>
 
+  <main class="main-content">
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x">
+        <!-- URL Input Section -->
+        <div class="cell medium-6">
+          <div class="card input-section">
+            <div class="card-section">
+              <h3 class="section-title">Content Source</h3>
+              <div class="input-group">
+                <label for="url" class="input-label">Enter URL</label>
+                <input id="url" type="url" placeholder="https://example.com" value="https://nemo.jessejesse.com">
+                <p class="help-text">Press Enter after typing to generate code</p>
+              </div>
+              
+              <div class="checkbox-group">
+                <input id="ytbAttr" type="checkbox" value="1">
+                <label for="ytbAttr" class="checkbox-label">
+                  <span class="custom-checkbox"></span>
+                  Enable fullscreen and autoplay
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Aspect Ratio Section -->
+        <div class="cell medium-6">
+          <div class="card aspect-section">
+            <div class="card-section">
+              <h3 class="section-title">Aspect Ratio</h3>
+              <div class="aspect-options">
+                <div class="grid-x grid-margin-x small-up-2 medium-up-3">
+                  <div class="cell">
+                    <input type="radio" checked="checked" name="aspect" value="16x9" id="asp1">
+                    <label for="asp1" class="aspect-option">16:9</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="8x5" id="asp2">
+                    <label for="asp2" class="aspect-option">8:5</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="5x4" id="asp3">
+                    <label for="asp3" class="aspect-option">5:4</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="5x3" id="asp4">
+                    <label for="asp4" class="aspect-option">5:3</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="4x3" id="asp5">
+                    <label for="asp5" class="aspect-option">4:3</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="4x5" id="asp6">
+                    <label for="asp6" class="aspect-option">4:5</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="3x2" id="asp7">
+                    <label for="asp7" class="aspect-option">3:2</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="3x1" id="asp8">
+                    <label for="asp8" class="aspect-option">3:1</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="2x1" id="asp9">
+                    <label for="asp9" class="aspect-option">2:1</label>
+                  </div>
+                  <div class="cell">
+                    <input type="radio" name="aspect" value="1x1" id="asp0">
+                    <label for="asp0" class="aspect-option">1:1</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Generated Code Section -->
+        <div class="cell medium-6">
+          <div class="card code-section">
+            <div class="card-section">
+              <div class="section-header">
+                <h3 class="section-title">HTML Code</h3>
+                <button class="btn copy-btn" data-clipboard-target="#html">
+                  <span class="btn-icon">📋</span> Copy HTML
+                </button>
+              </div>
+              <div id="html" class="code-block"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cell medium-6">
+          <div class="card code-section">
+            <div class="card-section">
+              <div class="section-header">
+                <h3 class="section-title">CSS Code</h3>
+                <button class="btn copy-btn" data-clipboard-target="#css">
+                  <span class="btn-icon">📋</span> Copy CSS
+                </button>
+              </div>
+              <div id="css" class="code-block">
+                <p>.iframe-container {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;overflow: hidden;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;padding-top: <span id="proportions"></span>%;<br>
+                }<br>
+                .iframe-container iframe {<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;top: 0;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;border: 0;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;height: 100%;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                }</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Preview Section -->
+        <div class="cell">
+          <div class="card preview-section">
+            <div class="card-section">
+              <h3 class="section-title">Preview</h3>
+              <div id="preview" class="preview-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <style id="style"></style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
